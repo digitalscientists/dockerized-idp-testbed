@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" ID="_7a4e9429-b274-4e97-9a5d-bf9a97f68d67" entityID="http://localhost:3000/saml/metadata">
+   <md:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+      <md:KeyDescriptor use="signing">
+         <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+            <ds:X509Data>
+               <ds:X509Certificate>MIIDijCCAnICCQDx/vDU+UEFlzANBgkqhkiG9w0BAQsFADCBhjELMAkGA1UEBhMCVVMxEDAOBgNVBAgMB0dlb3JnaWExEzARBgNVBAcMCkFscGhhcmV0dGExGzAZBgNVBAoMEkRpZ2l0YWwgU2NpZW50aXN0czEUMBIGA1UECwwLRW5naW5lZXJpbmcxHTAbBgkqhkiG9w0BCQEWDmRldkBkaWdpc2NpLmNvMB4XDTIyMDgyMzE2MTYzNloXDTMyMDgyMDE2MTYzNlowgYYxCzAJBgNVBAYTAlVTMRAwDgYDVQQIDAdHZW9yZ2lhMRMwEQYDVQQHDApBbHBoYXJldHRhMRswGQYDVQQKDBJEaWdpdGFsIFNjaWVudGlzdHMxFDASBgNVBAsMC0VuZ2luZWVyaW5nMR0wGwYJKoZIhvcNAQkBFg5kZXZAZGlnaXNjaS5jbzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOwNc2fzJrrSb4SPdILiLOoKTEjepNEzcObJnmbeNP4iGu/eRDPvkawe1M8FPxad09Ys44eJxivXhgorpHn2QyIegkqX6QBnPSq9sBzC6nq4Rgo5fgy7KnogfZPL7/qedbkDHJVVx2WX01I1HxsyqDdZORJmiY/oK9zj/EVhzfJGAD+qrCzs/oFUlfo6rwIBrQsb01rPcRUIYQCIJCDNQLYsrCpyNgagGVZSPo5ilTyYXdeBARkf06ckrmYi2kdzEE22CcvsATu5Fharl4BqsiFJn9HtCEaRY/mhnJFR00+/yZLWhbQt8orbEXwxklKFBXY8GQxZtIeAkSEXfeVBFM0CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAY4EqDXC4+K1vmOVPfuUiRw4oYRFLBUYLzbv9kKVDpV4RUDEKhbC0ZqwlNLsU9nG76vf+2Q/MqFtCHnoBlM6Nu5fpvX49svT/I9DT3rOC8kupBH4LksUzUfJ6ulphahlssxsErtzVYPgTrXpIbZ5BfGicBEpAT+FgtzA4YqKkfxfKJytbHo8B0r9fjMcx/R7ISISElY3pwr75ri5NcOsIf+BbKmvJcLx0Mw7JY7abo8Y3EBFIbQn1RRjYAvWmFcSHyQRRrEb20yOP/fVDEyesDTf0G/B/nbm2K0yQc3Bggx4jtr/Sk9bk+QqkxnWoj5MFpRL7ZfniSGSzUzrCp0ZLDg==</ds:X509Certificate>
+            </ds:X509Data>
+         </ds:KeyInfo>
+      </md:KeyDescriptor>
+      <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+      <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:3000/saml/consume" index="0" isDefault="true" />
+   </md:SPSSODescriptor>
+</md:EntityDescriptor>

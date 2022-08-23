@@ -11,24 +11,25 @@ RUN git clone --depth=1 --branch=1.3-stable https://github.com/apereo/phpCAS.git
  && ant dist -Ddoxygen.path=/usr/bin/doxygen -Dphp.path=/usr/bin/php
 
 FROM centos:centos7
-
-MAINTAINER Unicon, Inc.
-
 RUN yum -y update \
     && yum -y install httpd mod_ssl php php-pear php-xml php-pdo wget \
     && yum -y clean all
 
-COPY --from=stage /apereo/phpCAS/utils/dist/CAS-1.3.4.tgz /
+RUN wget https://github.com/apereo/phpCAS/releases/download/1.3.8/CAS-1.3.8.tgz
 
-RUN pear install CAS-1.3.4.tgz \
- && rm /CAS-1.3.4.tgz
+RUN pear clear-cache \
+    && pear update-channels \
+    && pear upgrade
 
-COPY httpd-foreground /usr/local/bin/
-COPY etc-httpd/ /etc/httpd/
-COPY var-www-html/ /var/www/html/
+RUN pear install CAS-1.3.8.tgz \
+ && rm /CAS-1.3.8.tgz
 
-RUN chmod +x /usr/local/bin/httpd-foreground
+# COPY httpd-foreground /usr/local/bin/
+# COPY etc-httpd/ /etc/httpd/
+# COPY var-www-html/ /var/www/html/
 
-EXPOSE 80 443
+# RUN chmod +x /usr/local/bin/httpd-foreground
 
-CMD ["httpd-foreground"]
+# EXPOSE 80 443
+
+# CMD ["httpd-foreground"]

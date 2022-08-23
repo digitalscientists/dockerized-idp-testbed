@@ -58,6 +58,14 @@ services:
     networks:
      - back
 
+  rails:
+    build: ./rails/
+    links:
+      - httpd-proxy:idptestbed
+      - sp:sp
+    networks:
+      - back
+
 networks:
   front:
     driver: bridge
